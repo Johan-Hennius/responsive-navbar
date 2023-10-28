@@ -8,7 +8,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     color: #fafafa;
-    background-color: #79c4e2;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+.index-bg {
+    background-image: linear-gradient(#e66465, #9198e5);
 }
 
 .primary-header {
@@ -44,6 +51,10 @@ body {
     padding-left: 1rem;
 }
 
+.mobile-nav-toggle {
+    display: none;
+}
+
 .flex {
     display: flex;
     justify-content: space-between;
@@ -69,7 +80,7 @@ body {
 @media (max-width: 35em) {
     .primary-nav {
         position: fixed;
-
+        z-index: 1000;
         /* inset is shorthand for top bottom left right */
         inset: 0 0 0 33%;
 
@@ -81,5 +92,20 @@ body {
         padding: min(25vh, 15rem) 3rem;
         background: hsla(0, 0%, 82%, 0.3);
         backdrop-filter: blur(1.5rem);
+
+        transform: translateX(100%);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        font-size: 1.5rem;
+        width: 2.5rem;
+        aspect-ratio: 1;
+        top: 2.5rem;
+        right: 2.5rem;
+        border: none;
+        background: none;
     }
 }
